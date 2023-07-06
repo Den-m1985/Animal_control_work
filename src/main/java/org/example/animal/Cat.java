@@ -1,14 +1,13 @@
 package org.example.animal;
 
-public class Cat extends Animal {
+public class Cat extends Pet {
 
 
     protected int bodyLength;
-    protected static final int MAX_WEIGHT = 200;
-    protected static final String TYPE = "Snake";
+    protected static final String TYPE = "Cat";
 
-    public Cat(int year, int weight, int countLimbs, int bodyLength) {
-        super(year, weight, countLimbs);
+    public Cat(int bodyLength) {
+        super();
         this.bodyLength = bodyLength;
     }
 
@@ -26,17 +25,13 @@ public class Cat extends Animal {
         return TYPE;
     }
 
-    @Override
-    public int getMaxWeight() {
-        return MAX_WEIGHT;
-    }
+
 
     @Override
     public String toString() {
         return "Cat - " +
                 "bodyLength=" + bodyLength +
                 ", year=" + id +
-                ", weight=" + weight +
                 "\n";
     }
 }

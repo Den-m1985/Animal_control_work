@@ -1,15 +1,45 @@
 package org.example.animal;
 
-public class Pet extends Animal{
+import java.time.LocalDate;
 
-    public Pet(int year, int weight, int countLimbs) {
-        super(year, weight, countLimbs);
+public class Pet extends Animal{
+    private static int idCounter = 0;
+    protected int id;
+    protected int number;
+    protected LocalDate dateOfBirth;
+    protected String name;
+    // commands: PetCommands
+
+
+    public Pet() {
+        this.id = idCounter++;
     }
 
     @Override
-    public int getMaxWeight() {
-        return 0;
+    public LocalDate getDateOfBirth() {
+        return null;
     }
+
+    @Override
+    public void setDateOfBirth(int year, int month, int day) {
+
+    }
+
+    @Override
+    public String getName() {
+        return null;
+    }
+
+    @Override
+    public void setName(String name) {
+
+    }
+
+    @Override
+    public int getId() {
+        return id;
+    }
+
 
     @Override
     public String getType() {

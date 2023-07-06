@@ -1,59 +1,57 @@
 package org.example.animal;
 
 
+import java.time.LocalDate;
+
 public abstract class Animal {
-    protected int id;
-    protected int number;
-    //protected dateOfBirth datetime;
-    protected String name;
+    //private static int idCounter = 0;
+    //protected int id;
+    //protected int number;
+    //protected LocalDate dateOfBirth;
+    //protected String name;
     // commands: PetCommands
-    protected int weight;
-    protected int countLimbs;
 
 
-    public Animal(int id, int weight, int countLimbs) {
-        this.id = id;
-        this.weight = weight;
-        this.countLimbs = countLimbs;
+    public Animal() {
+        //this.id = idCounter++;
     }
 
 
-    public abstract int getMaxWeight();
+    //    public LocalDate getDateOfBirth(){
+//        return dateOfBirth;
+//    }
+    public abstract LocalDate getDateOfBirth();
 
 
-    public void feed(int foodWeight) {
-        if ((this.weight + foodWeight) <= getMaxWeight()) {
-            this.weight = +foodWeight;
-        } else System.out.println("Max weight is exceeded");
-    }
+    //    public void setDateOfBirth(int year, int month, int day) {
+//        this.dateOfBirth = LocalDate.of(year, month, day);
+//    }
+    public abstract void setDateOfBirth(int year, int month, int day);
 
 
-    public int getId() {
-        return id;
-    }
+    //    public String getName() {
+//        return name;
+//    }
+    public abstract String getName();
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    //    public void setName(String name) {
+//        this.name = name;
+//    }
+    public abstract void setName(String name);
 
-    public int getWeight() {
-        return weight;
-    }
 
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
+/*
++ animal(int, datetime)
++ addCommand(enum): void
+ */
 
-    public int getCountLimbs() {
-        return countLimbs;
-    }
+    //    public int getId() {
+//        return id;
+//    }
+    public abstract int getId();
 
-    public void setCountLimbs(int countLimbs) {
-        this.countLimbs = countLimbs;
-    }
 
     public abstract String getType();
-
 }
 
 
