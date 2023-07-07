@@ -4,14 +4,9 @@ import org.example.command.Command;
 
 import java.util.ArrayList;
 
-public class Cat extends Pet {
+public class Horse extends Pack_animal {
     private ArrayList<Command> commands;
 
-
-    @Override
-    public String getType() {
-        return "Cat";
-    }
 
 
     @Override
@@ -19,6 +14,11 @@ public class Cat extends Pet {
         if (commands == null)
             commands = new ArrayList();
         this.commands.add(command);
+    }
+
+    @Override
+    public String getType() {
+        return "Horse";
     }
 
 
@@ -33,4 +33,3 @@ public class Cat extends Pet {
     }
 
 }
-

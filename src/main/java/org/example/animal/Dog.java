@@ -4,13 +4,13 @@ import org.example.command.Command;
 
 import java.util.ArrayList;
 
-public class Cat extends Pet {
+public class Dog extends Pet {
     private ArrayList<Command> commands;
 
 
     @Override
     public String getType() {
-        return "Cat";
+        return "Dog";
     }
 
 
@@ -33,4 +33,3 @@ public class Cat extends Pet {
     }
 
 }
-
