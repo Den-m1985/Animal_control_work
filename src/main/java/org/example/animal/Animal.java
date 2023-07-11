@@ -1,19 +1,26 @@
 package org.example.animal;
 
 
-import org.example.command.Command;
+import org.example.command.CommandAnimal;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public abstract class Animal {
-    protected int idCounter = 1;
+    protected static int idCounter = 1;
     protected int id;
     protected LocalDate dateOfBirth;
     protected String name;
+    public static ArrayList<String> arrayType;
 
 
     public Animal() {
         this.id = idCounter++;
+        if (arrayType == null) {
+            arrayType = new ArrayList<>();
+        }
+        if (!arrayType.contains(getType()))
+            arrayType.add(getType());
     }
 
 
@@ -27,8 +34,8 @@ public abstract class Animal {
     }
 
 
-    public void setDateOfBirth(int year, int month, int day) {
-        this.dateOfBirth = LocalDate.of(year, month, day);
+    public void setDateOfBirth(LocalDate birthDay) {
+        this.dateOfBirth = birthDay;
     }
 
 
@@ -42,13 +49,12 @@ public abstract class Animal {
     }
 
 
-    public abstract void addCommand(Command command);
+    public abstract void addCommand(CommandAnimal commandAnimal);
+
+
+    public abstract void addAnimal(String name, LocalDate birthDay);
 
 
     public abstract String getType();
 
 }
-
-
-
-
