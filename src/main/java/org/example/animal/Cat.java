@@ -1,11 +1,17 @@
 package org.example.animal;
 
-import org.example.command.Command;
+import org.example.command.CommandAnimal;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Cat extends Pet {
-    private ArrayList<Command> commands;
+    private List<CommandAnimal> commandAnimals;
+
+
+    public Cat() {
+    }
 
 
     @Override
@@ -15,10 +21,17 @@ public class Cat extends Pet {
 
 
     @Override
-    public void addCommand(Command command) {
-        if (commands == null)
-            commands = new ArrayList();
-        this.commands.add(command);
+    public void addCommand(CommandAnimal commandAnimal) {
+        if (commandAnimals == null)
+            commandAnimals = new ArrayList<>();
+        this.commandAnimals.add(commandAnimal);
+    }
+
+
+    @Override
+    public void addAnimal(String name, LocalDate birthDay) {
+        setName(name);
+        setDateOfBirth(birthDay);
     }
 
 
@@ -28,9 +41,8 @@ public class Cat extends Pet {
                 "id= " + getId() +
                 ", name= " + getName() +
                 ", dateOfBirth= " + getDateOfBirth() +
-                ", commands= " + commands +
+                ", commands= " + commandAnimals +
                 "\n";
     }
 
 }
-
